@@ -1,0 +1,22 @@
+@mixin clearfix() {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin column($col, $sum) {
+    width: (($grid-width - ($sum - 1)*$gutter-horizontal)/$sum)*$col;
+    float: left;
+    
+    &:not(:last-child) {
+        margin-right: $gutter-horizontal;
+    }
+}
+
+@mixin responsive($breakpoint) {
+    @media (max-width: $breakpoint) {
+        @content;
+    }
+}
