@@ -20,3 +20,9 @@
         @content;
     }
 }
+
+@mixin placeholder {
+	&::-webkit-input-placeholder { @content } 
+	&:-ms-input-placeholder { @content }
+	&::placeholder { @content }
+}
