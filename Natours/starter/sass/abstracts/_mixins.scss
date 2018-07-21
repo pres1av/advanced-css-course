@@ -13,12 +13,16 @@
     &:not(:last-child) {
         margin-right: $gutter-horizontal;
     }
+
+    @include responsive(tablet-portrait) {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
+    }
 }
 
 @mixin responsive($breakpoint) {
-    @media (max-width: $breakpoint) {
-        @content;
-    }
+    @media only screen and (max-width: map-get($breakpoints, $breakpoint)) { @content };
 }
 
 @mixin placeholder {
